@@ -1,0 +1,14 @@
+PODS:
+  - DTAsyncIO (0.1.0)
+
+DEPENDENCIES:
+  - DTAsyncIO (from `../`)
+
+EXTERNAL SOURCES:
+  DTAsyncIO:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DTAsyncIO: 619ba5ece66fb964fbdace18b6968adb5b15bfc2
+
+COCOAPODS: 0.35.0
