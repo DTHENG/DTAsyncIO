@@ -1,0 +1,19 @@
+PODS:
+  - DTAsyncIO (0.1.0)
+
+DEPENDENCIES:
+  - DTAsyncIO (from `https://github.com/DTHENG/DTAsyncIO.git`)
+
+EXTERNAL SOURCES:
+  DTAsyncIO:
+    :git: https://github.com/DTHENG/DTAsyncIO.git
+
+CHECKOUT OPTIONS:
+  DTAsyncIO:
+    :commit: a3b0cb68040b0dab43172da672ed7a668d26bb23
+    :git: https://github.com/DTHENG/DTAsyncIO.git
+
+SPEC CHECKSUMS:
+  DTAsyncIO: 5538dbac74ba1b831e98af244b82fa249f352d79
+
+COCOAPODS: 0.35.0

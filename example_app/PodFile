@@ -1,0 +1,3 @@
+platform :ios, deployment_target: '8.0'
+
+pod 'DTAsyncIO', :git => 'https://github.com/DTHENG/DTAsyncIO.git'
