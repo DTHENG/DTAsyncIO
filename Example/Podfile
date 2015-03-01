@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+
+target 'DTAsyncIO', :exclusive => true do
+  pod "DTAsyncIO", :path => "../"
+
+  
+end
