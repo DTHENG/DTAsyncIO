@@ -68,9 +68,10 @@ pod 'DTAsyncIO', :git => 'https://github.com/DTHENG/DTAsyncIO.git'
 Dont have a Podfile? You can easily update your project to use CocoaPods by following these steps:
 
 - Install CocoaPods library:
-	````shell
-	sudo gem install cocoapods
-	````
+	
+````bash
+sudo gem install cocoapods
+````
 
 
 ## Author
