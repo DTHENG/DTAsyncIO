@@ -69,7 +69,7 @@ Dont have a Podfile? You can easily update your project to use CocoaPods by foll
 
 - Install CocoaPods library:
 	
-````bash
+````sh
 sudo gem install cocoapods
 ````
 
