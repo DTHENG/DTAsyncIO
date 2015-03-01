@@ -28,28 +28,28 @@ _ExampleImplementation.m_
 
 ...
 
-- (void)writeExample() {
-			
-	[DTAsyncIO write:@{@"4": @(20)} forType:TEST_TYPE success:^(NSDictionary *data) {
-	
-		BOOL fourTwenty = [data[@"4"] intValue] == 20;
-		
-		NSLog(@"does 4 == 20? %@", fourTwenty ? @"YES" : @"NO");
-		
-	} failure:^(NSError *error) {
-		Log(@"Error! %@", error);
-	}];
+- (void)writeExample {
+    
+    [DTAsyncIO write:@{@"4": @(20)} forType:TEST_TYPE success:^(NSDictionary *data) {
+        
+        BOOL fourTwenty = [data[@"4"] intValue] == 20;
+        
+        NSLog(@"does 4 == 20? %@", fourTwenty ? @"YES" : @"NO");
+        
+    } failure:^(NSError *error) {
+        NSLog(@"Error! %@", error);
+    }];
 }
 
-- (void)readExample() {
-	
-	[DTAsyncIO read:TEST_TYPE success:^(NSDictionary *data) {
-	
-		NSLog(@"%@", data[@"4"]); // 20
-		
-	} failure:^(NSError *error) {
-		Log(@"Error! %@", error);
-	}];
+- (void)readExample {
+    
+    [DTAsyncIO read:TEST_TYPE success:^(NSDictionary *data) {
+        
+        NSLog(@"%@", data[@"4"]); // 20
+        
+    } failure:^(NSError *error) {
+        NSLog(@"Error! %@", error);
+    }];
 }
 ```
 
