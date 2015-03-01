@@ -8,7 +8,7 @@ Create an enum in your project to serve as your object types, something like:
 
 _ExampleDataType.h_
 
-````obj-c
+```obj-c
 #import <Foundation/Foundation.h>
 
 typedef enum ExampleDataType : NSUInteger {
@@ -18,11 +18,11 @@ typedef enum ExampleDataType : NSUInteger {
 	// todo: add more here
 
 } ExampleDataType;
-````
+```
 	
 _ExampleImplementation.m_
 
-````obj-c
+```obj-c
 #import "ExampleDataType.h"
 #import "DTAsyncIO.h"
 
@@ -51,7 +51,7 @@ _ExampleImplementation.m_
 		Log(@"Error! %@", error);
 	}];
 }
-````
+```
 
 ## Requirements
 
@@ -61,18 +61,29 @@ _ExampleImplementation.m_
 
 DTAsyncIO is available through GitHub. To install it, simply add the following line to your Podfile:
 
-````ruby
+```ruby
 pod 'DTAsyncIO', :git => 'https://github.com/DTHENG/DTAsyncIO.git'
-````
+```
 
 Dont have a Podfile? You can easily update your project to use CocoaPods by following these steps:
 
 - Install CocoaPods library:
-	
-````sh
+```sh
 sudo gem install cocoapods
-````
+```
+- Go to the directory where you have your __.xcodeproj__ file
+- Create a new file called __Podfile__:
+```ruby
+platform :ios, deployment_target: '8.0'
 
+pod 'DTAsyncIO', :git => 'https://github.com/DTHENG/DTAsyncIO.git'
+```
+- Now run this command:
+```sh
+pod install
+```
+- From now on only open the __.xcworkspace__ file in your project _NOT_ __.xcodeproj__
+- Done!
 
 ## Author
 
