@@ -6,7 +6,7 @@
 
 Create an enum in your project to serve as your object types, something like:
 
-ExampleDataType.h
+_ExampleDataType.h_
 
 ````obj-c
 #import <Foundation/Foundation.h>
@@ -20,7 +20,7 @@ typedef enum ExampleDataType : NSUInteger {
 } ExampleDataType;
 ````
 	
-ExampleImplementation.m
+_ExampleImplementation.m_
 
 ````obj-c
 #import "ExampleDataType.h"
@@ -59,12 +59,19 @@ ExampleImplementation.m
 
 ## Installation
 
-DTAsyncIO is available through GitHub. To install
-it, simply add the following line to your Podfile:
+DTAsyncIO is available through GitHub. To install it, simply add the following line to your Podfile:
 
 ````ruby
 pod 'DTAsyncIO', :git => 'https://github.com/DTHENG/DTAsyncIO.git'
 ````
+
+Dont have a Podfile? You can easily update your project to use CocoaPods by following these steps:
+
+- Install CocoaPods library:
+	````shell
+	sudo gem install cocoapods
+	````
+
 
 ## Author
 
