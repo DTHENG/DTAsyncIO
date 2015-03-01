@@ -10,15 +10,17 @@ Firstly you will need to setup an enum to serve as your object types, something 
 
 ExampleDataType.h
 
-	#import <Foundation/Foundation.h>
+````obj-c
+#import <Foundation/Foundation.h>
 
-	typedef enum ExampleDataType : NSUInteger {
+typedef enum ExampleDataType : NSUInteger {
 
-    	TEST_TYPE
+	TEST_TYPE
 
-    	// todo: add more here
+	// todo: add more here
 
-	} ExampleDataType;
+} ExampleDataType;
+````
 	
 Implementation.m
 
