@@ -1,20 +1,20 @@
 //
-//  ViewController.m
+//  Example.m
 //  DTAsyncIOTest
 //
 //  Created by Daniel Thengvall on 3/1/15.
 //  Copyright (c) 2015 DTHENG. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "Example.h"
 #import "DTAsyncIO.h"
 #import "ExampleDataType.h"
 
-@interface ViewController ()
+@interface Example ()
 
 @end
 
-@implementation ViewController
+@implementation Example
 
 - (void)viewDidLoad {
     [super viewDidLoad];

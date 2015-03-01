@@ -20,7 +20,7 @@ typedef enum ExampleDataType : NSUInteger {
 } ExampleDataType;
 ```
 	
-_ExampleImplementation.m_
+_Example.m_
 
 ```obj-c
 #import "ExampleDataType.h"

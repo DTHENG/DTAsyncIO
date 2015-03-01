@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  Example.h
 //  DTAsyncIOTest
 //
 //  Created by Daniel Thengvall on 3/1/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface Example : UIViewController
 
 
 @end
