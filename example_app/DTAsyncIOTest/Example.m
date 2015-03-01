@@ -10,11 +10,11 @@
 #import "DTAsyncIO.h"
 #import "ExampleDataType.h"
 
-@interface Example ()
-
-@end
 
 @implementation Example
+
+
+#pragma mark - UIViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,6 +27,9 @@
     
     [self readExample];
 }
+
+
+#pragma mark - Read Write Examples
 
 - (void)writeExample {
     
