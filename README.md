@@ -4,9 +4,7 @@
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-Firstly you will need to setup an enum to serve as your object types, something like this:
+Create an enum in your project to serve as your object types, something like:
 
 ExampleDataType.h
 
@@ -22,7 +20,7 @@ typedef enum ExampleDataType : NSUInteger {
 } ExampleDataType;
 ````
 	
-Implementation.m
+ExampleImplementation.m
 
 ````obj-c
 #import "ExampleDataType.h"
