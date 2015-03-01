@@ -47,7 +47,7 @@ Implementation.m
 	
 	[DTAsyncIO read:TEST_TYPE success:^(NSDictionary *data) {
 	
-		NSLog(@"@%", data[@"4"]); // 20
+		NSLog(@"%@", data[@"4"]); // 20
 		
 	} failure:^(NSError *error) {
 		Log(@"Error! %@", error);
