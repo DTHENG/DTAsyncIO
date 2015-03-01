@@ -21,15 +21,12 @@ Async Data Management in iOS
   s.author           = { "DTHENG" => "fender5289@gmail.com" }
   s.source           = { :git => "https://github.com/DTHENG/DTAsyncIO.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = '**/*.{h,m}'
+  s.source_files = '*.{h,m}'
   s.resource_bundles = {
-    'DTAsyncIO' => ['Pod/Assets/*.png']
+    'DTAsyncIO' => ['*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
