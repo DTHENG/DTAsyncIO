@@ -6,7 +6,7 @@
 
 Create an enum in your project to serve as your object types, something like:
 
-_ExampleDataType.h_
+_ExampleDataType.h_ [view file](example_app/DTAsyncIOTest/ExampleDataType.h)
 
 ```obj-c
 #import <Foundation/Foundation.h>
@@ -20,7 +20,7 @@ typedef enum ExampleDataType : NSUInteger {
 } ExampleDataType;
 ```
 	
-_Example.m_
+_Example.m_ [view file](example_app/DTAsyncIOTest/Example.m)
 
 ```obj-c
 #import "ExampleDataType.h"
