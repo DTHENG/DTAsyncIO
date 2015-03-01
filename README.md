@@ -24,45 +24,49 @@ typedef enum ExampleDataType : NSUInteger {
 	
 Implementation.m
 
-	#import "ExampleDataType.h"
-	#import "DTAsyncIO.h"
-	
-	...
-	
-	- (void)writeExample() {
-				
-		[DTAsyncIO write:@{@"4": @(20)} forType:TEST_TYPE success:^(NSDictionary *data) {
-		
-			BOOL fourTwenty = [data[@"4"] intValue] == 20;
+````obj-c
+#import "ExampleDataType.h"
+#import "DTAsyncIO.h"
+
+...
+
+- (void)writeExample() {
 			
-			NSLog(@"does 4 == 20? %@", fourTwenty ? @"YES" : @"NO");
-			
-		} failure:^(NSError *error) {
-			Log(@"Error! %@", error);
-		}];
-	}
+	[DTAsyncIO write:@{@"4": @(20)} forType:TEST_TYPE success:^(NSDictionary *data) {
 	
-	- (void)readExample() {
+		BOOL fourTwenty = [data[@"4"] intValue] == 20;
 		
-		[DTAsyncIO read:TEST_TYPE success:^(NSDictionary *data) {
+		NSLog(@"does 4 == 20? %@", fourTwenty ? @"YES" : @"NO");
 		
-			NSLog(@"@%", data[@"4"]); // 20
-			
-		} failure:^(NSError *error) {
-			Log(@"Error! %@", error);
-		}];
-	}
+	} failure:^(NSError *error) {
+		Log(@"Error! %@", error);
+	}];
+}
+
+- (void)readExample() {
+	
+	[DTAsyncIO read:TEST_TYPE success:^(NSDictionary *data) {
+	
+		NSLog(@"@%", data[@"4"]); // 20
+		
+	} failure:^(NSError *error) {
+		Log(@"Error! %@", error);
+	}];
+}
+````
 
 ## Requirements
 
-	- iOS 8 or greater
+- iOS 8 or greater
 
 ## Installation
 
 DTAsyncIO is available through GitHub. To install
 it, simply add the following line to your Podfile:
 
-    pod 'DTAsyncIO', :git => 'https://github.com/DTHENG/DTAsyncIO.git'
+````ruby
+pod 'DTAsyncIO', :git => 'https://github.com/DTHENG/DTAsyncIO.git'
+````
 
 ## Author
 
