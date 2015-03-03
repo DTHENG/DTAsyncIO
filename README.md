@@ -18,7 +18,7 @@ typedef enum ExampleDataType : NSUInteger {
 
 	TEST_TYPE
 
-	// todo: add more here
+	// todo: add more
 
 } ExampleDataType;
 ```
@@ -26,33 +26,34 @@ typedef enum ExampleDataType : NSUInteger {
 _Example.m_ [view file](example_app/DTAsyncIOTest/Example.m)
 
 ```obj-c
-#import "ExampleDataType.h"
 #import "DTAsyncIO.h"
+#import "ExampleDataType.h"
+#import "DTObservable.h"
 
 ...
 
 - (void)writeExample {
-    
-    [DTAsyncIO write:@{@"4": @(20)} forType:TEST_TYPE success:^(NSDictionary *data) {
-        
+
+    [[DTAsyncIO write:@{@"4": @20} forType:TEST_TYPE] subscribe:[[DTSubscriber alloc] init:^(NSDictionary *data) {
+
         BOOL fourTwenty = [data[@"4"] intValue] == 20;
-        
+
         NSLog(@"does 4 == 20? %@", fourTwenty ? @"YES" : @"NO");
-        
-    } failure:^(NSError *error) {
+
+    } onError:^(NSError *error) {
         NSLog(@"Error! %@", error);
-    }];
+    }]];
 }
 
 - (void)readExample {
-    
-    [DTAsyncIO read:TEST_TYPE success:^(NSDictionary *data) {
-        
+
+    [[DTAsyncIO read:TEST_TYPE] subscribe:[[DTSubscriber alloc] init:^(NSDictionary *data) {
+
         NSLog(@"%@", data[@"4"]); // 20
-        
-    } failure:^(NSError *error) {
+
+    } onError:^(NSError *error) {
         NSLog(@"Error! %@", error);
-    }];
+    }]];
 }
 ```
 
@@ -65,7 +66,7 @@ _Example.m_ [view file](example_app/DTAsyncIOTest/Example.m)
 DTAsyncIO is available through GitHub. To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'DTAsyncIO', '0.2.1'
+pod 'DTAsyncIO', '0.2.2'
 ```
 
 #### Dont have a Podfile? 
@@ -82,7 +83,7 @@ sudo gem install cocoapods
 ```ruby
 platform :ios, deployment_target: '8.0'
 
-pod 'DTAsyncIO', '0.2.1'
+pod 'DTAsyncIO', '0.2.2'
 ```
 - Now run this command:
 ```sh

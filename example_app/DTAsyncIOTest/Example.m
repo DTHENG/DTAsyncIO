@@ -9,6 +9,7 @@
 #import "Example.h"
 #import "DTAsyncIO.h"
 #import "ExampleDataType.h"
+#import "DTObservable.h"
 
 @implementation Example
 
@@ -31,27 +32,27 @@
 #pragma mark - Read Write Examples
 
 - (void)writeExample {
-    
-    [DTAsyncIO write:@{@"4": @(20)} forType:TEST_TYPE success:^(NSDictionary *data) {
-        
+
+    [[DTAsyncIO write:@{@"4": @20} forType:TEST_TYPE] subscribe:[[DTSubscriber alloc] init:^(NSDictionary *data) {
+
         BOOL fourTwenty = [data[@"4"] intValue] == 20;
-        
+
         NSLog(@"does 4 == 20? %@", fourTwenty ? @"YES" : @"NO");
-        
-    } failure:^(NSError *error) {
+
+    } onError:^(NSError *error) {
         NSLog(@"Error! %@", error);
-    }];
+    }]];
 }
 
 - (void)readExample {
-    
-    [DTAsyncIO read:TEST_TYPE success:^(NSDictionary *data) {
-        
+
+    [[DTAsyncIO read:TEST_TYPE] subscribe:[[DTSubscriber alloc] init:^(NSDictionary *data) {
+
         NSLog(@"%@", data[@"4"]); // 20
-        
-    } failure:^(NSError *error) {
+
+    } onError:^(NSError *error) {
         NSLog(@"Error! %@", error);
-    }];
+    }]];
 }
 
 @end
