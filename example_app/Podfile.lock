@@ -2,11 +2,11 @@ PODS:
   - DTAsyncIO (0.1.0)
 
 DEPENDENCIES:
-  - DTAsyncIO (from `https://github.com/DTHENG/DTAsyncIO.git`)
+  - DTAsyncIO (from `../`)
 
 EXTERNAL SOURCES:
   DTAsyncIO:
-    :git: https://github.com/DTHENG/DTAsyncIO.git
+    :path: ../
 
 CHECKOUT OPTIONS:
   DTAsyncIO:
