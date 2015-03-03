@@ -18,7 +18,7 @@
         @try {
             NSString *cacheKey = [NSString stringWithFormat:@"core-cache-%lu", (unsigned long)type];
             if ([DTCache get:cacheKey] != nil) {
-                [subscriber complete:((NSDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:[DTCache get:cacheKey]]];
+                [subscriber complete:(NSDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:[DTCache get:cacheKey]]];
                 return;
             }
             NSUserDefaults *diskData = [NSUserDefaults standardUserDefaults];
