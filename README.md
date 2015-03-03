@@ -1,6 +1,9 @@
 # DTAsyncIO
 
 [![CI Status](http://img.shields.io/travis/DTHENG/DTAsyncIO.svg?style=flat)](https://travis-ci.org/DTHENG/DTAsyncIO)
+[![Version](https://img.shields.io/cocoapods/v/DTAsyncIO.svg?style=flat)](http://cocoadocs.org/docsets/DTAsyncIO)
+[![License](https://img.shields.io/cocoapods/l/DTAsyncIO.svg?style=flat)](http://cocoadocs.org/docsets/DTAsyncIO)
+[![Platform](https://img.shields.io/cocoapods/p/DTAsyncIO.svg?style=flat)](http://cocoadocs.org/docsets/DTAsyncIO)
 
 ## Usage
 
@@ -62,7 +65,7 @@ _Example.m_ [view file](example_app/DTAsyncIOTest/Example.m)
 DTAsyncIO is available through GitHub. To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'DTAsyncIO', :git => 'https://github.com/DTHENG/DTAsyncIO.git'
+pod 'DTAsyncIO', '0.2'
 ```
 
 #### Dont have a Podfile? 
@@ -79,7 +82,7 @@ sudo gem install cocoapods
 ```ruby
 platform :ios, deployment_target: '8.0'
 
-pod 'DTAsyncIO', :git => 'https://github.com/DTHENG/DTAsyncIO.git'
+pod 'DTAsyncIO', '0.2'
 ```
 - Now run this command:
 ```sh

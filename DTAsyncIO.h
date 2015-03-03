@@ -8,15 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class DTObservable;
+
 @interface DTAsyncIO : NSObject
 
-+ (void)read:(NSUInteger)type
-     success:(void (^)(NSDictionary *data))success
-     failure:(void (^)(NSError *))error;
++ (DTObservable *)read:(NSUInteger)type;
 
-+ (void)write:(NSDictionary *)data
-      forType:(NSUInteger)type
-      success:(void (^)(NSDictionary *))success
-      failure:(void (^)(NSError *))error;
++ (DTObservable *)write:(NSDictionary *)data forType:(NSUInteger)type;
 
 @end

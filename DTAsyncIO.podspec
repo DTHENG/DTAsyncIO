@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "DTAsyncIO"
-  s.version          = "0.1.1"
+  s.version          = "0.2"
   s.summary          = "Async Data Management in iOS"
   s.description      = <<-DESC
 # DTAsyncIO
@@ -28,5 +28,5 @@ Async Data Management in iOS
   s.resource_bundles = {
     'DTAsyncIO' => ['*.png']
   }
-
+  s.dependency 'DTObservable', '0.1.1'
 end
