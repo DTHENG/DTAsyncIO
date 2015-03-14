@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class DTObservable;
+#import "DTObservable.h"
 
 @interface DTAsyncIO : NSObject
 
