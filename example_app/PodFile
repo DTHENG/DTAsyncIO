@@ -1,4 +1,4 @@
 platform :ios, deployment_target: '8.0'
 
-pod 'DTAsyncIO', '0.2.1'
+pod 'DTAsyncIO', :path => '../'
 
