@@ -1,8 +1,10 @@
 # DTObservable
 
+An implementation of the observable chain pattern for iOS.
+
 [![CI Status](http://img.shields.io/travis/DTHENG/DTObservable.svg?style=flat)](https://travis-ci.org/DTHENG/DTObservable)
 [![Version](https://img.shields.io/cocoapods/v/DTObservable.svg?style=flat)](http://cocoadocs.org/docsets/DTObservable)
-[![License](https://img.shields.io/cocoapods/l/DTObservable.svg?style=flat)](http://cocoadocs.org/docsets/DTObservable)  
+[![License](https://img.shields.io/cocoapods/l/DTObservable.svg?style=flat)](http://cocoadocs.org/docsets/DTObservable)
 [![Platform](https://img.shields.io/cocoapods/p/DTObservable.svg?style=flat)](http://cocoadocs.org/docsets/DTObservable)
 
 ## Usage
@@ -73,6 +75,7 @@ _ViewController.m_
     }];
 }
 ```
+
 #### File Style
 
 _ViewController.m_
@@ -146,12 +149,33 @@ _ExampleSubscriber.m_
 @end
 ```
 
+#### Merging 
+
+You can merge several instances of DTObservable into a single DTObservable, each observable will be evaluated and its result returned as part of an NSArray of all results.
+
+```obj-c
+[[DTObservable merge:[self exampleObservableOne], 
+		[self exampleObservableTwo], 
+		[self exampleObservableThree], 
+		[self exampleObservableFour], nil] 
+			subscribe:[[DTSubscriber alloc] init:^(NSArray *results) {
+
+	NSLog(@"%@", results[0]); // result of exampleObservableOne
+	NSLog(@"%@", results[1]); // result of exampleObservableTwo
+	NSLog(@"%@", results[2]); // result of exampleObservableThree
+	NSLog(@"%@", results[3]); // result of exampleObservableFour
+
+} onError:(NSError *mergeError) {
+	NSLog(@"error %@", mergeError);	
+}];
+``` 
+
 ## Installation
 
 DTObservable is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod 'DTObservable', '0.1.1'
+    pod 'DTObservable', '0.2.1'
 
 ## Author
 
