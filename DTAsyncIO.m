@@ -8,7 +8,6 @@
 
 #import "DTAsyncIO.h"
 #import "DTCache.h"
-#import "DTObservable.h"
 
 @implementation DTAsyncIO
 
