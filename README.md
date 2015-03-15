@@ -66,7 +66,7 @@ _Example.m_ [view file](example_app/DTAsyncIOTest/Example.m)
 DTAsyncIO is available through GitHub. To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'DTAsyncIO', '0.2.3'
+pod 'DTAsyncIO', '0.2.4'
 ```
 
 #### Dont have a Podfile? 
@@ -83,7 +83,7 @@ sudo gem install cocoapods
 ```ruby
 platform :ios, deployment_target: '8.0'
 
-pod 'DTAsyncIO', '0.2.3'
+pod 'DTAsyncIO', '0.2.4'
 ```
 - Now run this command:
 ```sh
