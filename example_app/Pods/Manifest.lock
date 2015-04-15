@@ -1,7 +1,7 @@
 PODS:
-  - DTAsyncIO (0.2.11):
-    - DTObservable (= 0.3)
-  - DTObservable (0.3)
+  - DTAsyncIO (0.2.12):
+    - DTObservable (= 0.3.1)
+  - DTObservable (0.3.1)
 
 DEPENDENCIES:
   - DTAsyncIO (from `../`)
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  DTAsyncIO: f258dae2866445f3704612495873f36b49d5ebf4
-  DTObservable: 948f9a5ddf04fe7805c4c99d92f7122d4c214444
+  DTAsyncIO: a2f577b178a2e564aa34a3eb2d926ff991bbd262
+  DTObservable: 3771d6724f6b436df8a5c07f57a6f3650372fc9d
 
 COCOAPODS: 0.36.3
