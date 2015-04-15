@@ -92,6 +92,16 @@ pod install
 - From now on only open the __.xcworkspace__ file in your project _NOT_ __.xcodeproj__
 - Done!
 
+## Errors
+
+| code |                            |
+|------|----------------------------|
+| -1   | Read error                 |
+| -2   | Write error                |
+| -3   | Error generating key       |
+
+- - -
+
 ## Author
 
 DTHENG, fender5289@gmail.com
