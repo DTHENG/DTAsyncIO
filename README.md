@@ -94,6 +94,13 @@ pod install
 
 ## Errors
 
+DTAsyncIO returns an NSError object when an NSException or other error has occurred. 
+
+```obj-c
+int code error.code;
+NSString *message = error.userInfo[@"message"];
+```
+
 | code |                            |
 |------|----------------------------|
 | -1   | Read error                 |
