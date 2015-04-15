@@ -83,7 +83,7 @@ sudo gem install cocoapods
 ```ruby
 platform :ios, deployment_target: '8.0'
 
-pod 'DTAsyncIO', '0.2.11'
+pod 'DTAsyncIO', '0.2.12'
 ```
 - Now run this command:
 ```sh
@@ -91,6 +91,23 @@ pod install
 ```
 - From now on only open the __.xcworkspace__ file in your project _NOT_ __.xcodeproj__
 - Done!
+
+## Errors
+
+DTAsyncIO returns an NSError object when an NSException or other error has occurred. 
+
+```obj-c
+int code = error.code;
+NSString *message = error.userInfo[@"message"];
+```
+
+| code |                            |
+|------|----------------------------|
+| -1   | Read error                 |
+| -2   | Write error                |
+| -3   | Error generating key       |
+
+- - -
 
 ## Author
 

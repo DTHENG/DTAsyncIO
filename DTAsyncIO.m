@@ -17,20 +17,22 @@
         @try {
             NSString *cacheKey = [NSString stringWithFormat:@"core-cache-%lu", (unsigned long)type];
             if ([DTCache get:cacheKey] != nil) {
-                [subscriber complete:(NSDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:[DTCache get:cacheKey]]];
-                return;
+                [subscriber next:(NSDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:[DTCache get:cacheKey]]];
+                [subscriber complete];
+            } else {
+                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                NSDictionary *values = [userDefaults objectForKey:[self toKey:type]];
+                if (values == nil) {
+                    [subscriber next:[[NSDictionary alloc] init]];
+                    [subscriber complete];
+                } else {
+                    [DTCache set:[NSKeyedArchiver archivedDataWithRootObject:values] forKey:cacheKey];
+                    [subscriber next:values];
+                    [subscriber complete];
+                }
             }
-            NSUserDefaults *diskData = [NSUserDefaults standardUserDefaults];
-            NSDictionary *values = [diskData objectForKey:[self toKey:type]];
-            if (values == nil) {
-                [subscriber complete:[[NSDictionary alloc] init]];
-                return;
-            }
-            [DTCache set:[NSKeyedArchiver archivedDataWithRootObject:values] forKey:cacheKey];
-            [subscriber complete:values];
-        }
-        @catch (NSException *e) {
-            [subscriber error:[[NSError alloc] initWithDomain:@"DTAsyncIO" code:2 userInfo:@{@"message": [NSString stringWithFormat:@"%@", e]}]];
+        } @catch (NSException *e) {
+            [subscriber error:[[NSError alloc] initWithDomain:@"DTAsyncIO" code:-1 userInfo:@{@"message": [NSString stringWithFormat:@"%@", e]}]];
         }
     }];
 }
@@ -40,18 +42,18 @@
         @try {
             NSString *cacheKey = [NSString stringWithFormat:@"core-cache-%lu", (unsigned long)type];
             [DTCache set:[NSKeyedArchiver archivedDataWithRootObject:data] forKey:cacheKey];
-            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             NSString *key = [self toKey:type];
             if (key == nil) {
-                [subscriber error:[[NSError alloc] initWithDomain:@"DTAsyncIO" code:1 userInfo:@{@"message": @"Error generating key"}]];
-                return;
+                [subscriber error:[[NSError alloc] initWithDomain:@"DTAsyncIO" code:-3 userInfo:@{@"message": @"Error generating key"}]];
+            } else {
+                [userDefaults setObject:data forKey:key];
+                [userDefaults synchronize];
+                [subscriber next:data];
+                [subscriber complete];
             }
-            [prefs setObject:data forKey:key];
-            [prefs synchronize];
-            [subscriber complete:data];
-        }
-        @catch (NSException *e) {
-            [subscriber error:[[NSError alloc] initWithDomain:@"DTAsyncIO" code:2 userInfo:@{@"message": [NSString stringWithFormat:@"%@", e]}]];
+        } @catch (NSException *e) {
+            [subscriber error:[[NSError alloc] initWithDomain:@"DTAsyncIO" code:-2 userInfo:@{@"message": [NSString stringWithFormat:@"%@", e]}]];
         }
     }];
 }
