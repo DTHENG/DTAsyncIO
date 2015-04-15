@@ -83,7 +83,7 @@ sudo gem install cocoapods
 ```ruby
 platform :ios, deployment_target: '8.0'
 
-pod 'DTAsyncIO', '0.2.11'
+pod 'DTAsyncIO', '0.2.12'
 ```
 - Now run this command:
 ```sh
