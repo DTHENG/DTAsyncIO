@@ -28,5 +28,5 @@ Async Data Management in iOS
   s.resource_bundles = {
     'DTAsyncIO' => ['*.png']
   }
-  s.dependency 'DTObservable', '0.4.1'
+  s.dependency 'DTObservable', '0.4.2'
 end
