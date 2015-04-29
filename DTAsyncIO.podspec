@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "DTAsyncIO"
-  s.version          = "0.2.13"
+  s.version          = "0.2.14"
   s.summary          = "Async Data Management in iOS"
   s.description      = <<-DESC
 # DTAsyncIO
