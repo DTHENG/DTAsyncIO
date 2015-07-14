@@ -66,7 +66,7 @@ _Example.m_ [view file](example_app/DTAsyncIOTest/Example.m)
 DTAsyncIO is available through GitHub. To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'DTAsyncIO', '0.2.18'
+pod 'DTAsyncIO', '0.2.19'
 ```
 
 #### Dont have a Podfile? 
