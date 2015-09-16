@@ -22,7 +22,7 @@ typedef enum ExampleDataType : NSUInteger {
 
 } ExampleDataType;
 ```
-	
+
 _Example.m_ [view file](example_app/DTAsyncIOTest/Example.m)
 
 ```obj-c
@@ -66,10 +66,10 @@ _Example.m_ [view file](example_app/DTAsyncIOTest/Example.m)
 DTAsyncIO is available through GitHub. To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'DTAsyncIO', '0.2.19'
+pod 'DTAsyncIO', '0.2.20'
 ```
 
-#### Dont have a Podfile? 
+#### Dont have a Podfile?
 
 You can easily update your project to use CocoaPods:
 
@@ -83,7 +83,7 @@ sudo gem install cocoapods
 ```ruby
 platform :ios, deployment_target: '8.0'
 
-pod 'DTAsyncIO', '0.2.18'
+pod 'DTAsyncIO', '0.2.20'
 ```
 - Now run this command:
 ```sh
@@ -94,7 +94,7 @@ pod install
 
 ## Errors
 
-DTAsyncIO returns an NSError object when an NSException or other error has occurred. 
+DTAsyncIO returns an NSError object when an NSException or other error has occurred.
 
 ```obj-c
 int code = error.code;
@@ -116,4 +116,3 @@ DTHENG, fender5289@gmail.com
 ## License
 
 DTAsyncIO is available under the MIT license. See the LICENSE file for more info.
-
