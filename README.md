@@ -59,7 +59,7 @@ _Example.m_ [view file](example_app/DTAsyncIOTest/Example.m)
 
 ## Requirements
 
-- iOS 8 or greater
+- iOS 7 or greater
 
 ## Installation
 
