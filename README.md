@@ -81,8 +81,6 @@ sudo gem install cocoapods
 - Create a new file called __Podfile__
 - Update _Podfile_ with:
 ```ruby
-platform :ios, deployment_target: '8.0'
-
 pod 'DTAsyncIO', '0.2.20'
 ```
 - Now run this command:
